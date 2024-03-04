@@ -1,11 +1,11 @@
-import Image from "next/image";
 
 import Header from "../app/components/Header";
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+  return (<>
       <Header page={"home"} />
-      
-    </main>
-  );
+      <main className="flex fixed w-full min-h-screen items-center justify-center">
+        <div className="w-11/12 h-72 bg-blue-800">
+        </div>
+      </main>
+      </>);
 }

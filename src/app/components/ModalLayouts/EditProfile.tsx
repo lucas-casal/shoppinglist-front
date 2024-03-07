@@ -1,5 +1,6 @@
 import { ModalContext } from "@/app/contexts/ModalContext";
 import { FormEvent, useEffect, useState } from "react";
+import { IoIosPerson } from "react-icons/io";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -28,9 +29,9 @@ const EditProfile = () => {
     }
 
     useEffect(() => {
-        const {name, img, password} = JSON.parse(localStorage.getItem('userInfo')!);
+        const {name, img} = JSON.parse(localStorage.getItem('userInfo')!);
 
-        console.log(JSON.parse(localStorage.getItem('userInfo')!))
+        
         setUserPhoto(img)
         setUsername(name)
     }, [])
@@ -73,12 +74,15 @@ const EditProfile = () => {
                 <form onSubmit={(e) => { saveNewUserInfo(e) }} className="space-y-4  flex flex-col justify-center items-center" action="#">
                     <input id='ImageFileInput' className='hidden' onChange={(e) => previewImage(e.target.files ? e.target.files[0] : '')} type="file" name="file" accept="image/*"></input>
                     <label htmlFor='ImageFileInput'>
-                        <div className=" w-20 h-20 rounded-full flex justify-center items-center overflow-hidden">
+                        <div className=" w-20 h-20 border-solid border-2 border-blue-400 dark:border-violet-700 rounded-full flex justify-center items-center overflow-hidden">
 
-                            <img
+                            {preview ? <img
                                 alt={'ImageFileInput'}
                                 className="h-full object-cover"
                                 src={preview?.toString()} />
+                            :
+                            <IoIosPerson className="w-full h-full" />
+                            }
                         </div>
                     </label>
 

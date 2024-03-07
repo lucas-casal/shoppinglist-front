@@ -1,14 +1,14 @@
-type MyShoppingListOptionProps = {
+type ListOptionBoxProps = {
     myShoppingList: {
         name: string,
         users: number,
         id: number
     }
 }
-const MyShoppingListOption = (props: MyShoppingListOptionProps) => {
+const ListOptionBox = (props: ListOptionBoxProps) => {
     const {name, users, id} = props.myShoppingList
     return (
-        <div id={id.toString()} className="flex flex-row justify-start h-48- items-start gap-2 p-2 border-b-2 border-blue-500 dark:border-violet-700">
+        <div id={id.toString()} className="flex flex-row justify-start items-start gap-2 p-2 border-b-2 border-blue-500 dark:border-violet-700">
             <div className="w-24 h-20">
             <p className="text-blue-500 dark:text-violet-700">Integrantes:</p>
 
@@ -16,7 +16,7 @@ const MyShoppingListOption = (props: MyShoppingListOptionProps) => {
                 {users}
             </div>
             </div>
-            <div className="relative flex flex-col items-start 380:w-4/5 600:w-11/12 min-w-auto h-20 border-l-2 border-blue-500 dark:border-white px-2">
+            <div className="relative flex flex-col items-start w-11/12 min-w-auto h-20 border-l-2 border-blue-500 dark:border-white px-2">
                 <p className="text-blue-500 dark:text-violet-700">Nome:</p>
                 <h2 className="w-full h-10 text-center my-auto">{name}</h2>
                 <svg className="w-6 h-6 text-gray-800 dark:text-white active:text-blue-500 active:dark:text-violet-700 absolute top-0 right-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -27,4 +27,4 @@ const MyShoppingListOption = (props: MyShoppingListOptionProps) => {
     )
 }
 
-export default MyShoppingListOption;
+export default ListOptionBox;

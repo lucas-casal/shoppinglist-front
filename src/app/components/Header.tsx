@@ -21,7 +21,7 @@ const Header = (props: HeaderProps) => {
     )
 
     return (
-        <header className="z-10 max-w-5xl w-full h-10 bg-blue-300 dark:bg-violet-900 fixed top-0 items-center justify-center flex">
+        <header className="z-10 w-screen h-10 bg-blue-300 dark:bg-violet-900 fixed top-0 items-center justify-center flex">
             <Link href="/current-list">
                 <button className="fixed top-0 left-0 w-10 h-10 flex items-center justify-center active:bg-blue-500 dark:active:bg-violet-500">
                     {cartIcon}

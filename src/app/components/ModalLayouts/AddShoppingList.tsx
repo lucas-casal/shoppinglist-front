@@ -49,12 +49,12 @@ const AddShoppingList = () => {
             </div>
             <div className="p-4 md:p-5">
                 <form onSubmit={(e) => { saveChosenOption(e) }} className="space-y-4  flex flex-col justify-center items-center" action="#">
-                    <button disabled={loading} onClick={e => setChoseOption(e.target.id)} id={(AddingListOptions.NEW_LIST).toString()} type='button' 
+                    <button disabled={loading} onClick={e => setChoseOption(AddingListOptions.NEW_LIST)} id={(AddingListOptions.NEW_LIST).toString()} type='button' 
                     className={(choseOption?.toString() === AddingListOptions.NEW_LIST.toString() ? ' bg-gradient-to-t text-white from-blue-800 to-blue-300 shadow-blue-200 dark:from-violet-950 dark:to-violet-400 shadow-md dark:shadow-violet-300' : '')+ ' border-4 border-blue-500 dark:border-violet-700 w-full h-10 rounded-full'}>
                         Criar nova lista
                     </button>
                     
-                    <button disabled={loading} onClick={e => setChoseOption(e.target.id)} id={(AddingListOptions.JOIN_LIST).toString()} type='button' 
+                    <button disabled={loading} onClick={e => setChoseOption(AddingListOptions.JOIN_LIST)} id={(AddingListOptions.JOIN_LIST).toString()} type='button' 
                     className={(choseOption?.toString() === AddingListOptions.JOIN_LIST.toString() ? ' bg-gradient-to-t text-white from-blue-800 to-blue-300 shadow-blue-200 dark:from-violet-950 dark:to-violet-400 shadow-md dark:shadow-violet-300' : '')+ ' border-4 border-blue-500 dark:border-violet-700 w-full h-10 rounded-full'}>
                         Entrar em uma lista existente
                     </button>
